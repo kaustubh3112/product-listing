@@ -9,13 +9,162 @@
 
     <!--Stylesheet-->
     <link href="./style/style.css" rel="stylesheet" />
+    <link href="./style/responsive.css" rel="stylesheet" />
 
 </head>
 
 <body>
+    <!--Header-->
+    <header>
+        <div class="main-container ">
+            <button class="hamburger-icon">
+                <img src="./images/menu.svg" alt="menu icon" />
+            </button>
+            <div class="logo-wrapper">
+                <a href="#">
+                    <img src="/images/logo.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-wrapper">
+                <button class="close-menu-icon"><img src="/images/close.svg" /></button>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" class="active">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Women</a>
+                        </li>
+                        <li>
+                            <a href="#">Men</a>
+                        </li>
+                        <li>
+                            <a href="#">Smart Gear</a>
+                        </li>
+                        <li>
+                            <a href="#">Accessories</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="cart-wrapper">
+                <a href="#" class="cart">
+                    <img src="/images/cart.svg" class="cart-logo" alt="logo" />
+                    <span class="cart-count">10</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="main-container-fluid ">
+            <div class="banner-heading">
+                <h1>Men’s Outerwear</h1>
+            </div>
+            <div class="banner-img">
+                <img src="images/banner-img.jpg" alt="banner image" />
+            </div>
+
+        </div>
+    </section>
+    <!--Product Listing-->
+    <section class="product-wrapper">
+        <div class="main-container">
+            <div class="product-sidebar">
+                <button class="close-icon"><img src="/images/close.svg" /></button>
+                <div class="filter-main">
 
 
-    <script src="./js/main.js"></script>
+                    <h4>Filters </h4>
+
+                    <div class="filter-wrapper">
+                        <h5>Categories</h5>
+                        <ul id="filterByCategory" class="filter-category"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="product-listing">
+                <div class="product-listing-header">
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="Search..." id="search-input" />
+                        <button class="search-btn" id="search-btn"><img src="/images/search.svg" /></button>
+                    </div>
+                    <div class="product-listing-header-right">
+                        <div class="sort-wrapper">
+                            <select class="sort-selection" id="sortBy">
+                                <option value="all">Sort by price</option>
+                                <option value="lowtohigh"> Low to High</option>
+                                <option value="highttolow"> High to Low </option>
+                            </select>
+                        </div>
+                        <div class="categories-filter">
+                            <button class="categories-filter-btn"><img src="/images/tune.svg" />Filter Results</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-listing-body">
+                    <div id="productlist" class="productlist"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer-->
+    <Footer>
+        <div class="main-container">
+            <div class="footer-block">
+                <h4>Account</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Order Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4>About Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4>Help</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h4>Follow Us!</h4>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore.</p>
+                </div>
+                <ul class="social-links">
+                    <li><a href="#"><img src="/images/instagram.svg" /></a></li>
+                    <li><a href="#"><img src="/images/facebook.svg" /></a></li>
+                    <li><a href="#"><img src="/images/twitter.svg" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="main-container">
+                <div class="footer-bottom-column"><a href="#" class="logo"><img src="/images/logo-black.jpg" /></a>
+                </div>
+                <div class="footer-bottom-column">
+                    <p class="copyright">© Company Name Address Ave, City Name, State ZIP</p>
+                </div>
+                <div class="footer-bottom-column">
+                    <ul class="footer-link">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </Footer>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
