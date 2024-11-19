@@ -29,6 +29,13 @@ const getProductData = async () => {
 
     displayProducts(products);
 
+    function noDataFound() {
+      let productMainContainer = document.querySelector(
+        ".product-listing-body"
+      );
+      productMainContainer.innerHTML = `<h3 class="nodata">No data found</h3>`;
+    }
+
     // Search
 
     searchInput.addEventListener("keyup", function () {
@@ -38,7 +45,7 @@ const getProductData = async () => {
       });
       filteredProduct.length > 0
         ? displayProducts(filteredProduct)
-        : (productDiv.innerHTML = "No Data Found.");
+        : noDataFound();
     });
 
     // sort by price
@@ -87,7 +94,9 @@ const getProductData = async () => {
             : categorySet.delete(selectedCategory);
 
           const filterProduct = products.filter((item) =>
-            [...categorySet].map((category) => item.category.includes(category))
+            [...categorySet].some((category) =>
+              item.category.includes(category)
+            )
           );
 
           displayProducts(filterProduct.length ? filterProduct : products);
@@ -99,7 +108,7 @@ const getProductData = async () => {
 
     //wishlist
     function wishlist() {
-      let wishlist = JSON.parse(localStorage.getItem("wishlistProduct"));
+      let wishlist = [];
       let wishListButtons = document.querySelectorAll(".wishlist-icon");
 
       wishListButtons.forEach((button, index) => {
@@ -137,7 +146,6 @@ function toggleContent(openToggle, closeToggle, content, className) {
     body.classList.remove("overlay");
   });
 }
-
 toggleContent(
   ".categories-filter-btn",
   ".close-icon",
